@@ -21,7 +21,7 @@ export async function GET() {
   } catch (error) {
 
    try{
-    await fs.promises.mkdir(dirPath1)
+    await fs.promises.mkdir('/tmp/app/biju__')
    }
    catch(error){
     NextResponse.json({ dirPath1});
