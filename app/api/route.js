@@ -4,7 +4,7 @@ import fs from 'fs';
 
 
 export async function GET() {
-  const dirPath = path.join(process.cwd())
+  const dirPath = path.join(process.cwd(), 'app')
   const files = await fs.promises.readdir(dirPath, { withFileTypes: true });
 
   let folderNames = files
