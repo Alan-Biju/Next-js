@@ -20,7 +20,12 @@ export async function GET() {
     return NextResponse.json({ msg: 'Hello from server',message: `File already exists at ${dirPath1}`, folderNames, dirPath1 , readPath, fileContent, });
   } catch (error) {
 
+   try{
     await fs.promises.mkdir(dirPath1)
+   }
+   catch(error){
+    NextResponse.json({ dirPath1});
+   }
   }
     
   return NextResponse.json({ msg: 'Hello from server', folderNames, dirPath1 , readPath, fileContent});
